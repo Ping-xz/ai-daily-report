@@ -5,250 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>全球AI动态日报 - 2026年3月24日</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            min-height: 100vh;
-            color: #e4e4e4;
-            line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-        
-        header {
-            text-align: center;
-            margin-bottom: 50px;
-            padding: 40px 0;
-            border-bottom: 2px solid rgba(255,255,255,0.1);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            background: linear-gradient(90deg, #00d4ff, #7c3aed, #ff6b6b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 10px;
-        }
-        
-        .date {
-            color: #888;
-            font-size: 1.1rem;
-        }
-        
-        .summary {
-            background: rgba(255,255,255,0.05);
-            border-radius: 16px;
-            padding: 30px;
-            margin-bottom: 40px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .summary h2 {
-            color: #00d4ff;
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-        }
-        
-        .summary ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
-        }
-        
-        .summary li {
-            padding: 12px 16px;
-            background: rgba(0,212,255,0.1);
-            border-radius: 8px;
-            border-left: 3px solid #00d4ff;
-        }
-        
-        .section {
-            margin-bottom: 40px;
-        }
-        
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 25px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .section-icon {
-            font-size: 2rem;
-        }
-        
-        .section h2 {
-            font-size: 1.5rem;
-            color: #fff;
-        }
-        
-        .card {
-            background: rgba(255,255,255,0.05);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 16px;
-            border: 1px solid rgba(255,255,255,0.08);
-            transition: all 0.3s ease;
-        }
-        
-        .card:hover {
-            background: rgba(255,255,255,0.08);
-            border-color: rgba(255,255,255,0.15);
-            transform: translateY(-2px);
-        }
-        
-        .card h3 {
-            color: #fff;
-            font-size: 1.1rem;
-            margin-bottom: 12px;
-        }
-        
-        .card h3 a {
-            color: inherit;
-            text-decoration: none;
-        }
-        
-        .card h3 a:hover {
-            color: #00d4ff;
-        }
-        
-        .card .summary-text {
-            color: #aaa;
-            margin-bottom: 15px;
-            font-size: 0.95rem;
-        }
-        
-        .card .meta {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        
-        .tag {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-        
-        .tag-new {
-            background: rgba(124, 58, 237, 0.3);
-            color: #a78bfa;
-        }
-        
-        .tag-hot {
-            background: rgba(255, 107, 107, 0.3);
-            color: #ff8787;
-        }
-        
-        .tag-cn {
-            background: rgba(255, 77, 77, 0.3);
-            color: #ff6b6b;
-        }
-        
-        .tag-us {
-            background: rgba(0, 122, 255, 0.3);
-            color: #4dabf7;
-        }
-        
-        .link-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            padding: 8px 16px;
-            background: linear-gradient(90deg, #00d4ff, #7c3aed);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 0.85rem;
-            transition: opacity 0.3s;
-        }
-        
-        .link-btn:hover {
-            opacity: 0.9;
-        }
-        
-        .tools-section {
-            background: rgba(255,255,255,0.05);
-            border-radius: 16px;
-            padding: 30px;
-            margin-top: 50px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        
-        .tools-section h2 {
-            color: #00d4ff;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-        
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
-        
-        .tool-card {
-            background: rgba(0,0,0,0.3);
-            padding: 20px;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .tool-card:hover {
-            transform: scale(1.02);
-        }
-        
-        .tool-card a {
-            color: #00d4ff;
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .tool-card a:hover {
-            text-decoration: underline;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 40px 0;
-            color: #666;
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            margin-top: 50px;
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-            
-            .container {
-                padding: 20px 15px;
-            }
-            
-            .card {
-                padding: 18px;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; color: #e4e4e4; line-height: 1.6; }
+        .container { max-width: 900px; margin: 0 auto; padding: 40px 20px; }
+        header { text-align: center; margin-bottom: 50px; padding: 40px 0; border-bottom: 2px solid rgba(255,255,255,0.1); }
+        h1 { font-size: 2.5rem; background: linear-gradient(90deg, #00d4ff, #7c3aed, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 10px; }
+        .date { color: #888; font-size: 1.1rem; }
+        .summary { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; margin-bottom: 40px; border: 1px solid rgba(255,255,255,0.1); }
+        .summary h2 { color: #00d4ff; margin-bottom: 20px; font-size: 1.5rem; }
+        .summary ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; }
+        .summary li { padding: 12px 16px; background: rgba(0,212,255,0.1); border-radius: 8px; border-left: 3px solid #00d4ff; }
+        .section { margin-bottom: 40px; }
+        .section-title { display: flex; align-items: center; gap: 15px; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .section-icon { font-size: 2rem; }
+        .section h2 { font-size: 1.5rem; color: #fff; }
+        .card { background: rgba(255,255,255,0.05); border-radius: 12px; padding: 24px; margin-bottom: 16px; border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s; }
+        .card:hover { background: rgba(255,255,255,0.08); transform: translateY(-2px); }
+        .card h3 { color: #fff; font-size: 1.1rem; margin-bottom: 12px; }
+        .card h3 a { color: inherit; text-decoration: none; }
+        .card h3 a:hover { color: #00d4ff; }
+        .card .summary-text { color: #aaa; margin-bottom: 15px; font-size: 0.95rem; }
+        .card .meta { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; }
+        .tag { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; }
+        .tag-new { background: rgba(124, 58, 237, 0.3); color: #a78bfa; }
+        .tag-hot { background: rgba(255, 107, 107, 0.3); color: #ff8787; }
+        .tag-cn { background: rgba(255, 77, 77, 0.3); color: #ff6b6b; }
+        .tag-us { background: rgba(0, 122, 255, 0.3); color: #4dabf7; }
+        .link-btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; background: linear-gradient(90deg, #00d4ff, #7c3aed); color: #fff; text-decoration: none; border-radius: 8px; font-size: 0.85rem; }
+        .link-btn:hover { opacity: 0.9; }
+        .tools-section { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 30px; margin-top: 50px; border: 1px solid rgba(255,255,255,0.1); }
+        .tools-section h2 { color: #00d4ff; margin-bottom: 20px; text-align: center; }
+        .tools-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .tool-card { background: rgba(0,0,0,0.3); padding: 20px; border-radius: 10px; text-align: center; }
+        .tool-card a { color: #00d4ff; text-decoration: none; font-weight: 500; }
+        footer { text-align: center; padding: 40px 0; color: #666; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); margin-top: 50px; }
+        @media (max-width: 768px) { h1 { font-size: 1.8rem; } .container { padding: 20px 15px; } .card { padding: 18px; } }
     </style>
 </head>
 <body>
@@ -261,239 +52,162 @@
         <div class="summary">
             <h2>📊 今日要闻概览</h2>
             <ul>
-                <li><strong>Luma AI Uni-1发布:</strong> 图像生成能力超越Google和OpenAI，成本降低30%</li>
-                <li><strong>Nemotron-Cascade 2:</strong> Nvidia 3B参数模型获数学和编程金牌，后训练配方开源</li>
-                <li><strong>Claude Code Channels:</strong> Anthropic推出OpenClaw竞品，支持Telegram和Discord</li>
-                <li><strong>Meta CEO Agent:</strong> 扎克伯格正在训练AI代理协助CEO工作</li>
+                <li><strong>Luma AI Uni-1:</strong> 图像生成超越Google和OpenAI，成本降低30%</li>
+                <li><strong>Nemotron-Cascade 2:</strong> Nvidia 3B模型获数学编程金牌</li>
+                <li><strong>Claude Code Channels:</strong> Anthropic推OpenClaw竞品</li>
+                <li><strong>Meta CEO Agent:</strong> 扎克伯格训练AI代理协助CEO工作</li>
             </ul>
         </div>
         
         <div class="section">
-            <div class="section-title">
-                <span class="section-icon">🔥</span>
-                <h2>新品动态</h2>
-            </div>
+            <div class="section-title"><span class="section-icon">🔥</span><h2>新品动态</h2></div>
             
             <div class="card">
                 <h3><span class="tag tag-hot">国际</span> Luma AI发布Uni-1图像生成模型</h3>
-                <p class="summary-text">图像生成市场格局巨变！Uni-1不仅在质量上与Google竞争，还从根本上重新思考了AI创建图像的方式，性能超越Google和OpenAI，成本降低高达30%。</p>
-                <div class="meta">
-                    <a href="https://venturebeat.com/technology/luma-ai-launches-uni-1-a-model-that-outscores-google-and-openai-while" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <p class="summary-text">图像生成市场格局巨变！Uni-1在质量上超越Google和OpenAI，成本降低高达30%，从根本上重新思考AI创建图像的方式。</p>
+                <div class="meta"><a href="https://venturebeat.com/technology/luma-ai-launches-uni-1-a-model-that-outscores-google-and-openai-while" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
                 <h3><span class="tag tag-hot">国际</span> Nvidia Nemotron-Cascade 2数学编程金牌</h3>
-                <p class="summary-text">3B活跃参数模型在数学和编程基准测试中获金牌，后训练管道现已开源，对企业AI团队的价值可能超过模型本身。</p>
-                <div class="meta">
-                    <a href="https://venturebeat.com/orchestration/nvidias-nemotron-cascade-2-wins-math-and-coding-gold-medals-with-3b-active" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <p class="summary-text">3B活跃参数模型在数学和编程基准测试中获金牌，后训练管道现已开源。</p>
+                <div class="meta"><a href="https://venturebeat.com/orchestration/nvidias-nemotron-cascade-2-wins-math-and-coding-gold-medals-with-3b-active" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
-                <h3><span class="tag tag-hot">国际</span> Mistral Small 4整合推理视觉编码</h3>
-                <p class="summary-text">Apache 2.0模型可在少至2个DGX B200上运行，在LCR上超越GPT-OSS 120B，但仍落后于Qwen和Haiku的推理基准。</p>
-                <div class="meta">
-                    <a href="https://venturebeat.com/technology/mistrals-small-4-consolidates-reasoning-vision-and-coding-into-one-model-at" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <h3><span class="tag tag-new">国际</span> Mistral Small 4整合推理视觉编码</h3>
+                <p class="summary-text">Apache 2.0模型可在少至2个DGX B200上运行，超越GPT-OSS 120B。</p>
+                <div class="meta"><a href="https://venturebeat.com/technology/mistrals-small-4-consolidates-reasoning-vision-and-coding-into-one-model-at" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
-                <h3><span class="tag tag-new">国际</span> Anthropic发布Claude Code Channels</h3>
-                <p class="summary-text">被誉为"OpenClaw杀手"，支持通过Telegram和Discord发送消息。早期用户认为Anthropic成功吸收了开源运动最理想的特性——多渠道支持和长期记忆。</p>
-                <div class="meta">
-                    <a href="https://venturebeat.com/orchestration/anthropic-just-shipped-an-openclaw-killer-called-claude-code-channels" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <h3><span class="tag tag-hot">国际</span> Anthropic发布Claude Code Channels</h3>
+                <p class="summary-text">被誉为"OpenClaw杀手"，支持Telegram和Discord消息，具多渠道支持和长期记忆。</p>
+                <div class="meta"><a href="https://venturebeat.com/orchestration/anthropic-just-shipped-an-openclaw-killer-called-claude-code-channels" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
                 <h3><span class="tag tag-new">国际</span> Cursor Composer 2基于中国AI模型</h3>
-                <p class="summary-text">有消息透露Cursor Composer 2秘密构建在一个中国AI模型之上，揭示了西方开源AI的更深层次问题。</p>
-                <div class="meta">
-                    <a href="https://venturebeat.com/technology/cursors-composer-2-was-secretly-built-on-a-chinese-ai-model-and-it-exposes-a" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <p class="summary-text">有消息透露Cursor Composer 2秘密构建在中国AI模型上，揭示西方开源AI问题。</p>
+                <div class="meta"><a href="https://venturebeat.com/technology/cursors-composer-2-was-secretly-built-on-a-chinese-ai-model-and-it-exposes-a" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
                 <h3><span class="tag tag-new">国际</span> 微软发布MAI-Image 2图像模型</h3>
-                <p class="summary-text">第二代AI图像模型提供"增强的照片级真实感"和更可靠的图像文字生成，现已在Copilot和Bing Image Creator中推出。</p>
-                <div class="meta">
-                    <a href="https://microsoft.ai/news/introducing-MAI-Image-2/" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <p class="summary-text">第二代AI图像模型增强照片级真实感，已在Copilot和Bing Image Creator推出。</p>
+                <div class="meta"><a href="https://microsoft.ai/news/introducing-MAI-Image-2/" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
         </div>
         
         <div class="section">
-            <div class="section-title">
-                <span class="section-icon">📰</span>
-                <h2>行业资讯</h2>
-            </div>
+            <div class="section-title"><span class="section-icon">📰</span><h2>行业资讯</h2></div>
             
             <div class="card">
                 <h3><span class="tag tag-hot">国际</span> 扎克伯格训练AI CEO代理</h3>
-                <p class="summary-text">据知情人士透露，Meta CEO扎克伯格正在构建一个CEO代理来帮助他工作。该代理目前帮助他更快获取信息，例如通过检索通常需要层层人员才能获得的答案。</p>
-                <div class="meta">
-                    <a href="https://www.wsj.com/tech/ai/mark-zuckerberg-is-building-an-ai-agent-to-help-him-be-ceo-eddab2d5" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <p class="summary-text">Meta CEO扎克伯格正在构建CEO代理帮助工作，目前帮助他更快获取信息。</p>
+                <div class="meta"><a href="https://www.wsj.com/tech/ai/mark-zuckerberg-is-building-an-ai-agent-to-help-him-be-ceo-eddab2d5" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
                 <h3><span class="tag tag-us">国际</span> 三星计划投资730亿美元AI芯片</h3>
-                <p class="summary-text">同比增加22%，试图超越SK海力士成为Nvidia主要内存供应商。受Agentic AI需求推动，联名CEOJun Young-hyun表示资金将投向先进机器人等"面向未来"的领域。</p>
-                <div class="meta">
-                    <a href="https://www.theverge.com/2026/3/19/24086150/samsung-ai-chip-investment-73-billion" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <p class="summary-text">同比增加22%，试图超越SK海力士成为Nvidia主要内存供应商。</p>
+                <div class="meta"><a href="https://www.theverge.com/2026/3/19/24086150/samsung-ai-chip-investment-73-billion" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
-                <h3><span class="tag tag-us">国际</span> 谷歌正在测试macOS版Gemini应用</h3>
-                <p class="summary-text">据报道，谷歌正在为macOS测试Gemini独立应用，进一步扩展其AI助手在各平台的覆盖。</p>
-                <div class="meta">
-                    <a href="https://www.theverge.com/2026/3/19/24086148/meta-ai-moderation-contractors" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <h3><span class="tag tag-us">国际</span> 谷歌测试macOS版Gemini应用</h3>
+                <p class="summary-text">谷歌正在为macOS测试Gemini独立应用，扩展AI助手平台覆盖。</p>
+                <div class="meta"><a href="https://www.theverge.com/2026/3/19/24086148/meta-ai-moderation-contractors" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
                 <h3><span class="tag tag-us">国际</span> OpenAI洽谈购买Altman核聚变公司电力</h3>
-                <p class="summary-text">Sam Altman的AI公司正在洽谈从他的核聚变初创公司购买电力。同时Altman已辞去Helion董事会主席职务并回避相关讨论。</p>
-                <div class="meta">
-                    <a href="https://www.theverge.com/2026/3/22/24110450/sam-altman-ai-company-buy-electricity-fusion-startup" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <p class="summary-text">Sam Altman的AI公司正在洽谈从其核聚变公司购买电力。</p>
+                <div class="meta"><a href="https://www.theverge.com/2026/3/22/24110450/sam-altman-ai-company-buy-electricity-fusion-startup" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
                 <h3><span class="tag tag-us">国际</span> 北卡男子承认AI音乐流媒体欺诈</h3>
-                <p class="summary-text">Michael Smith承认创建了数十万首AI生成歌曲，并使用机器人将这些歌曲流媒体"数十亿"次。该计划让他赚了超过800万美元的版税。</p>
-                <div class="meta">
-                    <a href="https://www.justice.gov/usao-sdny/pr/north-carolina-man-pleads-guilty-music-streaming-fraud-aided-artificial-intelligence-0" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <p class="summary-text">Michael Smith承认创建数十万首AI生成歌曲，用机器人流媒体数十亿次，赚超800万美元版税。</p>
+                <div class="meta"><a href="https://www.justice.gov/usao-sdny/pr/north-carolina-man-pleads-guilty-music-streaming-fraud-aided-artificial-intelligence-0" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
         </div>
         
         <div class="section">
-            <div class="section-title">
-                <span class="section-icon">💼</span>
-                <h2>商业运用与创业模式</h2>
-            </div>
+            <div class="section-title"><span class="section-icon">💼</span><h2>商业运用</h2></div>
             
             <div class="card">
                 <h3><span class="tag tag-new">国际</span> WordPress支持AI Agent发布内容</h3>
-                <p class="summary-text">通过MCP协议，AI Agent如Claude和ChatGPT可以撰写并发布博客文章。任何AI Agent撰写的文章将作为草稿，用户可以在发布前进行检查。</p>
-                <div class="meta">
-                    <a href="https://wordpress.com/blog/2026/03/20/ai-agent-manage-content/" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <p class="summary-text">通过MCP协议，Claude和ChatGPT可撰写并发布博客，文章将作为草稿供用户审核。</p>
+                <div class="meta"><a href="https://wordpress.com/blog/2026/03/20/ai-agent-manage-content/" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
                 <h3><span class="tag tag-new">国际</span> Alexa AI升级版登陆英国</h3>
-                <p class="summary-text">首个欧洲市场发布，支持"英式幽默"，知道"cuppa"是什么，理解"knackered"的意思。早期访问期间免费，之后每月£19.99，Prime用户免费。</p>
-                <div class="meta">
-                    <a href="https://www.aboutamazon.com/news/devices/alexa-plus-international-launch" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <p class="summary-text">首个欧洲市场发布，支持英式幽默，理解"knackered"等英式表达，Prime用户免费。</p>
+                <div class="meta"><a href="https://www.aboutamazon.com/news/devices/alexa-plus-international-launch" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
                 <h3><span class="tag tag-new">国际</span> Perplexity发布Comet浏览器iOS版</h3>
-                <p class="summary-text">AI搜索引擎推出移动浏览器，进军移动端市场，为用户提供更便捷的AI搜索体验。</p>
-                <div class="meta">
-                    <a href="https://www.theverge.com/2026/3/18/24073328/perplexity-comet-browser-ios" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <p class="summary-text">AI搜索引擎推出移动浏览器，进军移动端市场。</p>
+                <div class="meta"><a href="https://www.theverge.com/2026/3/18/24073328/perplexity-comet-browser-ios" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
-                <h3><span class="tag tag-new">国际</span> 索尼训练"防护AI"模型打击Ghibli侵权</h3>
-                <p class="summary-text">针对AI生成的宫崎骏风格侵权内容，训练专属保护模型，保护知识产权。</p>
-                <div class="meta">
-                    <a href="https://www.theverge.com/2026/3/18/24073312/sony-ghibli-ai-protective-model" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <h3><span class="tag tag-new">国际</span> 索尼训练"防护AI"打击Ghibli侵权</h3>
+                <p class="summary-text">针对AI生成的宫崎骏风格侵权内容，训练专属保护模型。</p>
+                <div class="meta"><a href="https://www.theverge.com/2026/3/18/24073312/sony-ghibli-ai-protective-model" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
                 <h3><span class="tag tag-new">国际</span> AI生成Val Kilmer主演新电影</h3>
-                <p class="summary-text">已故演员Val Kilmer的数字形象将出现在电影《As Deep As The Grave》中，其遗产管理方同意让AI生成的演员形象出现。</p>
-                <div class="meta">
-                    <a href="https://variety.com/2026/film/news/val-kilmer-ai-film-as-deep-as-the-grave-1236691042/" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <p class="summary-text">已故演员的数字形象将出现在电影《As Deep As The Grave》中。</p>
+                <div class="meta"><a href="https://variety.com/2026/film/news/val-kilmer-ai-film-as-deep-as-the-grave-1236691042/" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
         </div>
         
         <div class="section">
-            <div class="section-title">
-                <span class="section-icon">💬</span>
-                <h2>用户讨论热点</h2>
-            </div>
+            <div class="section-title"><span class="section-icon">💬</span><h2>用户讨论热点</h2></div>
             
             <div class="card">
                 <h3><span class="tag tag-hot">国际</span> Signal创始人帮助Meta AI加密</h3>
-                <p class="summary-text">Moxie Marlinspike正在与Meta合作，将Confer的隐私技术集成到Meta AI底层，提升用户隐私保护。</p>
-                <div class="meta">
-                    <a href="https://confer.to/blog/2026/03/encrypted-meta/" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <p class="summary-text">Moxie Marlinspike将Confer隐私技术集成到Meta AI底层。</p>
+                <div class="meta"><a href="https://confer.to/blog/2026/03/encrypted-meta/" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
-                <h3><span class="tag tag-new">国际</span> Meta用AI moderation取代人工审核</h3>
-                <p class="summary-text">未来几年将减少第三方承包商依赖，AI将承担重复性审查工作，如图形内容审查和非法药物销售或诈骗等领域的对抗性内容审查。</p>
-                <div class="meta">
-                    <a href="https://about.fb.com/news/2026/03/boosting-your-support-and-safety-on-metas-apps-with-ai/" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <h3><span class="tag tag-new">国际</span> Meta用AI取代人工审核</h3>
+                <p class="summary-text">未来几年减少第三方承包商依赖，AI承担重复性审查工作。</p>
+                <div class="meta"><a href="https://about.fb.com/news/2026/03/boosting-your-support-and-safety-on-metas-apps-with-ai/" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
                 <h3><span class="tag tag-new">国际</span> 教皇AI顾问称Peter Thiel为异端</h3>
-                <p class="summary-text">教皇AI顾问Paolo Benanti在文章中质疑Thiel是否应该被处以火刑。Thiel将其关于"反基督"的讲座带到了罗马。</p>
-                <div class="meta">
-                    <a href="https://legrandcontinent.eu/fr/2026/03/14/thiel-heresie-benanti/" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <p class="summary-text">教皇AI顾问Paolo Benanti质疑Thiel是否应被处以火刑。</p>
+                <div class="meta"><a href="https://legrandcontinent.eu/fr/2026/03/14/thiel-heresie-benanti/" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
             
             <div class="card">
                 <h3><span class="tag tag-new">国际</span> "Vibe设计"概念兴起</h3>
-                <p class="summary-text">从vibe coding到vibe design，AI驱动的设计新范式正在流行，Google正在尝试让Stitch工具推动这一概念。</p>
-                <div class="meta">
-                    <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
-            </div>
-            
-            <div class="card">
-                <h3><span class="tag tag-new">国际</span> 8个组织争夺"人类创作"标识</h3>
-                <p class="summary-text">专家呼吁统一标准，避免消费者在AI时代混淆"人类创作"与"AI生成"内容。</p>
-                <div class="meta">
-                    <a href="https://www.theverge.com/2026/3/17/24052688/ai-human-created-label-standard" target="_blank" class="link-btn">查看原文 →</a>
-                </div>
+                <p class="summary-text">从vibe coding到vibe design，AI驱动设计新范式正在流行。</p>
+                <div class="meta"><a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-ai-ui-design/" target="_blank" class="link-btn">查看原文 →</a></div>
             </div>
         </div>
         
         <div class="tools-section">
-            <h2>🔗 推荐可视化工具</h2>
-            <p style="text-align: center; color: #888; margin-bottom: 25px;">帮助你追踪全球AI动态的网页资源</p>
+            <h2>🔗 推荐工具</h2>
             <div class="tools-grid">
-                <div class="tool-card">
-                    <a href="https://venturebeat.com/category/ai/" target="_blank">VentureBeat AI</a>
-                    <p style="color: #666; font-size: 0.8rem; margin-top: 8px;">国际AI新闻汇总</p>
-                </div>
-                <div class="tool-card">
-                    <a href="https://www.wired.com/tag/artificial-intelligence/" target="_blank">WIRED AI</a>
-                    <p style="color: #666; font-size: 0.8rem; margin-top: 8px;">AI深度报道</p>
-                </div>
-                <div class="tool-card">
-                    <a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">The Verge AI</a>
-                    <p style="color: #666; font-size: 0.8rem; margin-top: 8px;">科技消费新闻</p>
-                </div>
-                <div class="tool-card">
-                    <a href="https://www.36kr.com/information/AI/" target="_blank">36氪 AI</a>
-                    <p style="color: #666; font-size: 0.8rem; margin-top: 8px;">国内AI资讯</p>
-                </div>
-                <div class="tool-card">
-                    <a href="https://techcrunch.com/category/artificial-intelligence/" target="_blank">TechCrunch AI</a>
-                    <p style="color: #666; font-size: 0.8rem; margin-top: 8px;">创业投资新闻</p>
-                </div>
+                <div class="tool-card"><a href="https://venturebeat.com/category/ai/" target="_blank">VentureBeat AI</a></div>
+                <div class="tool-card"><a href="https://www.wired.com/tag/artificial-intelligence/" target="_blank">WIRED AI</a></div>
+                <div class="tool-card"><a href="https://www.theverge.com/ai-artificial-intelligence" target="_blank">The Verge AI</a></div>
+                <div class="tool-card"><a href="https://www.36kr.com/information/AI/" target="_blank">36氪 AI</a></div>
             </div>
         </div>
         
         <footer>
             <p>🤖 全球AI动态日报 | 2026年3月24日</p>
-            <p style="margin-top: 10px; color: #555;">来源：VentureBeat, WIRED, The Verge 等</p>
+            <p style="margin-top:10px;color:#555;">来源：VentureBeat, WIRED, The Verge</p>
         </footer>
     </div>
 </body>
